@@ -16,26 +16,23 @@ jobs:
           node-version: '16'
 
       - name: Install backend dependencies
-        working-directory: botaniq/backend
+        working-directory: backend
         run: npm install
 
       - name: Install frontend dependencies
-        working-directory: botaniq
         run: npm install
 
       - name: Build backend
-        working-directory: botaniq/backend
+        working-directory: backend
         run: npm run build
 
       - name: Build frontend
-        working-directory: botaniq
         run: npm run build
 
       - name: Run backend
-        working-directory: botaniq/backend
+        working-directory: backend
         run: npm run dev &
         
       - name: Run frontend
-        working-directory: botaniq
         run: npm run dev &
   
