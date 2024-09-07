@@ -1,0 +1,2 @@
+# botaniq
+Plant shopping website
