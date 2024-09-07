@@ -1,0 +1,93 @@
+{
+    "items": [
+        {
+            "itemId": 1,
+            "picUrl": "../../plant_1.png",
+            "name": "Selset Plant Pot Small Fawn",
+            "price": 14,
+            "reviewStars": 4,
+            "reviews": 2,
+            "itemDesc": "13cm pot. A stylish, minimalist planter perfect for smaller indoor plants. Its smooth fawn-colored finish adds a subtle, earthy touch to any room, blending seamlessly with various décor styles. Ideal for succulents or small leafy greens, this pot is both functional and decorative."
+        },
+        {
+            "itemId": 2,
+            "picUrl": "../../plant_2.png",
+            "name": "Monstera Deliciosa (Faux)",
+            "price": 20,
+            "reviewStars": 4,
+            "reviews": 36,
+            "itemDesc": "Offers the beauty of the iconic Swiss Cheese Plant without the need for maintenance. With its realistic, glossy leaves and intricate detailing, this artificial plant brings a tropical, vibrant feel to your home year-round. Perfect for adding greenery to any space, it requires no watering or upkeep."
+        },
+        {
+            "itemId": 3,
+            "picUrl": "../../plant_3.png",
+            "name": "Monstera Deliciosa",
+            "price": 35,
+            "reviewStars": 5,
+            "reviews": 52,
+            "itemDesc": "Often called the 'Swiss Cheese Plant,' this is a striking tropical plant known for its large, glossy, fenestrated leaves. This popular houseplant adds an exotic touch to any space with its bold, statement-making foliage. Easy to care for, Monstera thrives in indirect light and brings a lush, jungle vibe to your home."
+        },
+        {
+            "itemId": 4,
+            "picUrl": "../../plant_4.png",
+            "name": "Pothos",
+            "price": 27,
+            "reviewStars": 3,
+            "reviews": 9,
+            "itemDesc": "A versatile and hardy indoor plant known for its trailing vines and vibrant green, heart-shaped leaves. Perfect for beginners, it thrives in a variety of light conditions and is easy to care for, making it a great addition to any home or office. Its air-purifying qualities add to its appeal as a low-maintenance decorative plant."
+        },
+        {
+            "itemId": 5,
+            "picUrl": "../../plant_5.png",
+            "name": "Peace Lily Plant (Faux)",
+            "price": 150,
+            "reviewStars": 5,
+            "reviews": 20,
+            "itemDesc": "96cm tall. Brings the elegance and grace of the real Peace Lily without the hassle of care. Featuring lifelike white blooms and lush green leaves, this artificial plant adds a calming and sophisticated touch to any space. Ideal for home or office, it offers a timeless look that stays fresh year-round with no need for watering or sunlight."
+        },
+        {
+            "itemId": 6,
+            "picUrl": "../../plant_6.png",
+            "name": "Fiddle Leaf Tree Garden Pot",
+            "price": 85,
+            "reviewStars": 4,
+            "reviews": 41,
+            "itemDesc": "110cm pot. A stunning statement piece, featuring the bold, oversized leaves of the popular Fiddle Leaf Fig in a sleek garden pot. Perfect for adding height and greenery to any indoor space, this tree is a favourite for its striking form and vibrant foliage. Whether in a living room or entryway, it brings a fresh, modern vibe to your décor."
+        },
+        {
+            "itemId": 7,
+            "picUrl": "../../plant_7.png",
+            "name": "Magnolia Mini (Faux)",
+            "price": 8,
+            "reviewStars": 3,
+            "reviews": 15,
+            "itemDesc": "The Magnolia Mini (Faux) captures the delicate beauty of magnolia blooms in a compact, maintenance-free form. With its realistic white flowers and rich green leaves, this miniature faux plant adds a touch of elegance to any tabletop or shelf. Perfect for small spaces, it brings timeless charm without the need for watering or care."
+        },
+        {
+            "itemId": 8,
+            "picUrl": "../../plant_8.png",
+            "name": "Pilea Peperomioides",
+            "price": 60,
+            "reviewStars": 5,
+            "reviews": 21,
+            "itemDesc": "Also known as the 'Chinese Money Plant,' this is a charming, compact plant with unique round, coin-shaped leaves. Its bright green foliage and easy-care nature make it a popular choice for plant lovers, adding a playful and modern touch to any room. Perfect for tabletops or shelves, it thrives in bright, indirect light."
+        },
+        {
+            "itemId": 9,
+            "picUrl": "../../plant_9.png",
+            "name": "Parlor Palm",
+            "price": 35,
+            "reviewStars": 4,
+            "reviews": 19,
+            "itemDesc": "A graceful indoor plant known for its feathery, arching fronds that bring a touch of tropical elegance to any space. Easy to care for and tolerant of low light, this palm is perfect for adding a lush, vibrant look to living rooms, offices, or entryways. Its air-purifying qualities make it a functional yet decorative choice for indoor environments."
+        },{
+            "itemId": 10,
+            "picUrl": "../../plant_10.png",
+            "name": "Majesty Palm Plant",
+            "price": 59,
+            "reviewStars": 5,
+            "reviews": 12,
+            "itemDesc": "Boasts regal, feathery fronds that add a touch of tropical luxury to any indoor space. Known for its elegant, arching leaves and stately appearance, this plant thrives in bright, indirect light and enhances the ambiance of living rooms, offices, and entryways. It’s a stunning choice for creating a lush, exotic atmosphere while being relatively easy to care for."
+        }
+    ]
+}
