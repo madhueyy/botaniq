@@ -1,0 +1,41 @@
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install backend dependencies
+        working-directory: botaniq/backend
+        run: npm install
+
+      - name: Install frontend dependencies
+        working-directory: botaniq
+        run: npm install
+
+      - name: Build backend
+        working-directory: botaniq/backend
+        run: npm run build
+
+      - name: Build frontend
+        working-directory: botaniq
+        run: npm run build
+
+      - name: Run backend
+        working-directory: botaniq/backend
+        run: npm run dev &
+        
+      - name: Run frontend
+        working-directory: botaniq
+        run: npm run dev &
+  
