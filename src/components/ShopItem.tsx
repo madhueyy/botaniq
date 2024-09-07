@@ -8,6 +8,8 @@ type ShopItemProps = {
   itemName: string;
   itemPrice: number;
   itemReviewStars: number;
+  itemReviews: number;
+  itemDesc: string;
 };
 
 export default function ShopItem({
@@ -16,10 +18,14 @@ export default function ShopItem({
   itemName,
   itemPrice,
   itemReviewStars,
+  itemReviews,
+  itemDesc,
 }: ShopItemProps) {
   const filledStars = itemReviewStars;
   const nonFilledStars = 5 - itemReviewStars;
   console.log(itemPic);
+  console.log(itemReviews);
+  console.log(itemDesc);
 
   return (
     <>
