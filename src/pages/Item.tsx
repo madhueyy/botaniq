@@ -37,7 +37,7 @@ export default function ItemDetail() {
   const fetchItem = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/getitem/${itemId}`
+        `https://botaniq-backend.vercel.app/api/getitem/${itemId}`
       );
 
       if (!response.ok) {

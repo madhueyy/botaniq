@@ -30,7 +30,9 @@ export default function Shop() {
   // Function to fetch all the plants
   const fetchItems = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/getitems");
+      const response = await fetch(
+        "https://botaniq-backend.vercel.app/api/getitems"
+      );
 
       if (!response.ok) {
         throw new Error("Failed to fetch");

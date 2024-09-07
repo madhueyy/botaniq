@@ -15,7 +15,9 @@ export default function RelatedItems({ itemId, itemPrice }: RelatedItemsProps) {
   // based on name similarity
   const fetchAndFilterItems = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/getitems");
+      const response = await fetch(
+        "https://botaniq-backend.vercel.app/api/getitems"
+      );
 
       if (!response.ok) {
         throw new Error("Failed to fetch items");
