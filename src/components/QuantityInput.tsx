@@ -53,6 +53,7 @@ export default function QuantityInput({
     value: number | null
   ) => {
     if (value !== null && value >= 1 && value <= 20) {
+      event;
       setQuantity(value);
     }
   };
@@ -93,7 +94,7 @@ const green = {
 };
 
 const StyledInputRoot = styled("div")(
-  ({ theme }) => `
+  ({}) => `
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 500;
   color: black;
@@ -140,7 +141,7 @@ const StyledInput = styled("input")(
 );
 
 const StyledButton = styled("button")(
-  ({ theme }) => `
+  ({}) => `
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 0.875rem;
   box-sizing: border-box;
