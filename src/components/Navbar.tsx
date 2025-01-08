@@ -28,7 +28,7 @@ export default function Navbar() {
         {/* Box for whole bar */}
         <Box sx={{ display: "flex", flexGrow: 1, gap: "20px" }}>
           {/* Box for left side of bar */}
-          <Box sx={{ color: "#3B7D56" }}>
+          <Box sx={{ color: "#f14837" }}>
             <TablerPlant2 />
           </Box>
 
@@ -49,14 +49,14 @@ export default function Navbar() {
                 component={Link}
                 to={item.path}
                 sx={{
-                  color: "black",
+                  color: "white",
                   fontSize: "1.25rem",
                   fontFamily: "Plus Jakarta Sans",
                   fontWeight: 600,
                   borderRadius: isActive(item.path) ? "12px" : "none",
                   borderWidth: "12px",
                   backgroundColor: isActive(item.path)
-                    ? "#F1E9DA"
+                    ? "#f14837"
                     : "transparent",
                   boxShadow: isActive(item.path) ? 1 : 0,
                   height: isActive(item.path) ? "2.25rem" : "2.25rem",
@@ -64,9 +64,9 @@ export default function Navbar() {
                   lineHeight: "2.25rem",
                   "&:hover": {
                     backgroundColor: isActive(item.path)
-                      ? "#A6B591"
+                      ? "#F57D7F"
                       : "transparent",
-                    color: isActive(item.path) ? "black" : "#35714D",
+                    color: isActive(item.path) ? "white" : "#f14837",
                   },
                 }}
               >
@@ -85,10 +85,10 @@ export default function Navbar() {
             size="large"
             edge="end"
             sx={{
-              color: "#3B7D56",
+              color: "#f14837",
               "&:hover": {
-                backgroundColor: "#A6B591",
-                color: "black",
+                backgroundColor: "#f14837",
+                color: "white",
               },
             }}
           >

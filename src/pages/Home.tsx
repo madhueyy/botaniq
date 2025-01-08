@@ -29,29 +29,6 @@ export default function Home() {
     <>
       <Navbar />
 
-      {/* Box for green gradient circle bg */}
-      <Box
-        sx={{
-          position: "absolute",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: -1,
-        }}
-      >
-        <img
-          src={greenCircle}
-          alt="green circle bg"
-          style={{
-            width: "200rem",
-          }}
-        />
-      </Box>
-
       {/* Box for hero section */}
       <Box
         sx={{
@@ -63,44 +40,10 @@ export default function Home() {
           zIndex: 1,
         }}
       >
-        {/* Box for the two plants that fade up */}
-        <Box sx={{ position: "relative", width: "50%" }}>
-          <img
-            src={plant2}
-            // Fade up animation
-            className={`fade-up fade-up-background ${
-              fadeIn ? "fade-up-background" : ""
-            }`}
-            style={{
-              position: "absolute",
-              top: "0%",
-              left: "20%",
-              zIndex: 1,
-              borderRadius: "24px",
-              boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
-            }}
-          ></img>
-          <img
-            src={plant}
-            // Fade up animation
-            className={`fade-up fade-up-foreground ${
-              fadeIn ? "fade-up-foreground" : ""
-            }`}
-            style={{
-              position: "absolute",
-              top: "20%",
-              left: "40%",
-              zIndex: 2,
-              borderRadius: "24px",
-              boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
-            }}
-          ></img>
-        </Box>
-
-        {/* Box for rhs of hero */}
+        {/* Box for middle of hero */}
         <Box
           sx={{
-            width: "50%",
+            width: "100%",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -111,7 +54,7 @@ export default function Home() {
             className={`fade-up fade-up-background ${
               fadeIn ? "fade-up-background" : ""
             }`}
-            style={{ color: "#3B7D56", marginBottom: "-3rem" }}
+            style={{ color: "#f14837", marginBottom: "-3rem" }}
           />
 
           {/* Website name */}
@@ -121,7 +64,7 @@ export default function Home() {
               fadeIn ? "fade-up-foreground" : ""
             }`}
             fontFamily={"Playfair Display"}
-            color="black"
+            color="white"
             fontWeight={600}
             fontSize={"8rem"}
           >
@@ -138,10 +81,10 @@ export default function Home() {
             fontWeight={500}
             fontSize={"2rem"}
             textAlign={"center"}
-            color="black"
+            color="white"
           >
-            Bringing <span style={{ color: "#3B7D56" }}>nature</span> to <br />
-            your <span style={{ color: "#3B7D56" }}>doorstep</span>
+            bringing <span style={{ color: "white" }}>nature</span> to <br />
+            your <span style={{ color: "white" }}>doorstep.</span>
           </Typography>
         </Box>
       </Box>
@@ -163,14 +106,14 @@ export default function Home() {
           fontWeight={500}
           fontSize={"1rem"}
           textAlign={"center"}
-          color="black"
+          color="white"
         >
           Featured Items
         </Typography>
 
         <IconButton
           sx={{
-            color: "#3B7D56",
+            color: "white",
           }}
           onClick={handleScrollToHomeItems}
         >
