@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
 import Navbar from "../components/Navbar";
 import { Box, IconButton, Typography } from "@mui/material";
 import type { SVGProps } from "react";
