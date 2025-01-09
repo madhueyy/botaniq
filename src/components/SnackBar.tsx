@@ -23,7 +23,7 @@ export default function SnackBar({ snackbarOpen, handleClose }: SnackBarProps) {
         anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
       >
         <SnackbarContent
-          message="Added to Cart"
+          message="Added to Cart!"
           sx={{
             color: "black",
             backgroundColor: "white",
@@ -34,8 +34,9 @@ export default function SnackBar({ snackbarOpen, handleClose }: SnackBarProps) {
               <Button
                 size="small"
                 onClick={handleCheckout}
+                variant="contained"
                 sx={{
-                  color: "#3B7D56",
+                  backgroundColor: "#f14837",
                   fontFamily: "Plus Jakarta Sans",
                   fontWeight: "600",
                 }}

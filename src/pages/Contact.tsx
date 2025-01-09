@@ -122,12 +122,12 @@ export default function Contact() {
                 fontWeight: 600,
                 borderRadius: "12px",
                 padding: "8px 24px",
-                backgroundColor: "#F1E9DA",
+                backgroundColor: "#f14837",
                 boxShadow: 1,
-                color: "black",
+                color: "white",
                 height: "3rem",
                 "&:hover": {
-                  backgroundColor: "#A6B591",
+                  backgroundColor: "#F57D7F",
                 },
               }}
             >

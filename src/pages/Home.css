@@ -1,3 +1,13 @@
+body {
+  background: rgb(241, 72, 55);
+  background: radial-gradient(
+    circle,
+    rgba(241, 72, 55, 1) 0%,
+    rgba(255, 204, 238, 1) 100%
+  );
+  overflow-x: hidden;
+}
+
 @keyframes fadeUp {
   0% {
     opacity: 0;
@@ -6,6 +16,72 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes spinFadeIn1 {
+  from {
+    opacity: 0;
+    transform: translateY(-40px) rotate(0deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(50deg);
+  }
+}
+
+@keyframes spinFadeIn2 {
+  from {
+    opacity: 0;
+    transform: translateY(40px) rotate(40deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes spinFadeIn3 {
+  from {
+    opacity: 0;
+    transform: translateY(40px) rotate(70deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes spinFadeIn4 {
+  from {
+    opacity: 0;
+    transform: translateY(-40px) rotate(0deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(-50deg);
+  }
+}
+
+@keyframes spinFadeIn5 {
+  from {
+    opacity: 0;
+    transform: translateY(40px) rotate(-40deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes spinFadeIn6 {
+  from {
+    opacity: 0;
+    transform: translateY(40px) rotate(-70deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
   }
 }
 
@@ -22,11 +98,26 @@
   animation-delay: 1s;
 }
 
-body {
-  background: rgb(241, 72, 55);
-  background: radial-gradient(
-    circle,
-    rgba(241, 72, 55, 1) 0%,
-    rgba(255, 204, 238, 1) 100%
-  );
+.spin-up-1 {
+  animation: spinFadeIn1 1.75s ease-out forwards;
+}
+
+.spin-up-2 {
+  animation: spinFadeIn2 1.75s ease-out forwards;
+}
+
+.spin-up-3 {
+  animation: spinFadeIn3 1.75s ease-out forwards;
+}
+
+.spin-up-4 {
+  animation: spinFadeIn4 1.75s ease-out forwards;
+}
+
+.spin-up-5 {
+  animation: spinFadeIn5 1.75s ease-out forwards;
+}
+
+.spin-up-6 {
+  animation: spinFadeIn6 1.75s ease-out forwards;
 }

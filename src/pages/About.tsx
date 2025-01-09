@@ -16,7 +16,7 @@ export default function AboutPage() {
           fontFamily={"Playfair Display"}
           fontWeight={700}
           variant="h2"
-          sx={{ color: "#3B7D56", marginBottom: "2rem" }}
+          sx={{ color: "#f14837", marginBottom: "2rem" }}
         >
           About Us
         </Typography>
@@ -28,7 +28,7 @@ export default function AboutPage() {
               fontFamily={"Plus Jakarta Sans"}
               fontWeight={600}
               variant="h4"
-              color="black"
+              color="white"
               sx={{ marginBottom: "1rem" }}
             >
               Our Mission
@@ -50,7 +50,7 @@ export default function AboutPage() {
               fontFamily={"Plus Jakarta Sans"}
               fontWeight={600}
               variant="h4"
-              color="black"
+              color="white"
               sx={{ marginBottom: "1rem" }}
             >
               Our Story
@@ -73,7 +73,7 @@ export default function AboutPage() {
               fontFamily={"Plus Jakarta Sans"}
               fontWeight={600}
               variant="h4"
-              color="black"
+              color="white"
               sx={{ marginBottom: "1rem" }}
             >
               Meet the Team

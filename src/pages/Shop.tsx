@@ -17,7 +17,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import SwapVertIcon from "@mui/icons-material/SwapVert";
 import { useNavigate } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import greenCircle from "../assets/radial_gradient.png";
 
 export default function Shop() {
   const [items, setItems] = useState<Item[]>([]);
@@ -89,29 +88,6 @@ export default function Shop() {
     <>
       <Navbar />
 
-      {/* Box for green gradient circle bg */}
-      <Box
-        sx={{
-          position: "absolute",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: -1,
-        }}
-      >
-        <img
-          src={greenCircle}
-          alt="green circle bg"
-          style={{
-            width: "200rem",
-          }}
-        />
-      </Box>
-
       {/* Box for back button, search bar and sort-by */}
       <Box
         display={"flex"}
@@ -130,12 +106,12 @@ export default function Shop() {
               fontWeight: 600,
               borderRadius: "4px",
               padding: "8px 24px",
-              backgroundColor: "#F2F2F2",
-              color: "black",
+              backgroundColor: "#f14837",
+              color: "white",
               height: 50,
               boxShadow: 1,
               "&:hover": {
-                backgroundColor: "#A6B591",
+                backgroundColor: "#F57D7F",
               },
             }}
           >
@@ -152,7 +128,7 @@ export default function Shop() {
               display: "flex",
               alignItems: "center",
               width: 400,
-              backgroundColor: "#F2F2F2",
+              backgroundColor: "white",
             }}
           >
             <InputBase
@@ -182,7 +158,7 @@ export default function Shop() {
               alignItems: "center",
               width: 300,
               height: 50,
-              backgroundColor: "#F2F2F2",
+              backgroundColor: "white",
             }}
           >
             {/* Box for sort-by icon and text */}

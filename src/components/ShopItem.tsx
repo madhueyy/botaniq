@@ -93,7 +93,7 @@ export default function ShopItem({
             fontFamily={"Playfair Display"}
             fontWeight={700}
             variant="h6"
-            color="#3B7D56"
+            color="white"
           >
             {itemName}
           </Typography>

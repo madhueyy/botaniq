@@ -1,10 +1,11 @@
 .bg {
-  background: rgb(233, 238, 226);
+  background: rgb(241, 72, 55);
   background: radial-gradient(
     circle,
-    rgba(233, 238, 226, 1) 0%,
-    rgba(255, 255, 255, 1) 100%
+    rgba(241, 72, 55, 1) 0%,
+    rgba(255, 204, 238, 1) 100%
   );
+  overflow-x: hidden;
   height: 100vh;
   width: 100vw;
   background-size: cover;

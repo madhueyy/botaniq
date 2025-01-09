@@ -62,6 +62,7 @@ export default function HomeItems2({
             padding: "0",
             borderRadius: "50px",
             boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+            backgroundColor: "white",
           }}
         >
           {/* Box for item details */}
@@ -78,7 +79,7 @@ export default function HomeItems2({
               fontFamily={"Playfair Display"}
               fontWeight={600}
               variant="h3"
-              sx={{ color: "#3B7D56" }}
+              sx={{ color: "#f14837" }}
             >
               {itemName.toUpperCase()}
             </Typography>
@@ -122,10 +123,10 @@ export default function HomeItems2({
 
             {/* Item description */}
             <Typography
-              fontFamily={"Playfair Display"}
-              fontSize="1.25rem"
+              fontFamily={"Plus Jakarta Sans"}
+              fontSize="1rem"
               sx={{
-                color: "#918C83",
+                color: "#F57D7F",
                 textAlign: "left",
                 marginTop: "0.5rem",
                 paddingRight: "8rem",
@@ -147,12 +148,12 @@ export default function HomeItems2({
                 fontWeight: 600,
                 borderRadius: "12px",
                 padding: "8px 24px",
-                backgroundColor: "#F1E9DA",
+                backgroundColor: "#f14837",
                 boxShadow: 1,
-                color: "black",
+                color: "white",
                 height: "3rem",
                 "&:hover": {
-                  backgroundColor: "#A6B591",
+                  backgroundColor: "#F57D7F",
                 },
               }}
             >

@@ -167,19 +167,18 @@ export default function ItemDetail() {
               alt="Item"
               style={{
                 borderRadius: "45px",
-                boxShadow: "36px 0px 32px rgba(241, 233, 218, 1)",
                 transition: "transform 0.1s ease-in-out",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform =
                   "translateY(-10px) translateX(-10px)";
                 e.currentTarget.style.boxShadow =
-                  "36px 12px 32px rgba(184, 201, 161, 1)";
+                  "12px 12px 2px rgb(255, 204, 238, 0.5)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0) translateX(0)";
                 e.currentTarget.style.boxShadow =
-                  "36px 0px 32px rgba(241, 233, 218, 1)";
+                  "0px 0px 0px rgba(241, 233, 218, 0)";
               }}
             />
           </Box>
@@ -197,7 +196,7 @@ export default function ItemDetail() {
               fontFamily={"Playfair Display"}
               fontWeight={700}
               variant="h2"
-              sx={{ color: "#3B7D56" }}
+              sx={{ color: "white" }}
             >
               {item.name.toUpperCase()}
             </Typography>
@@ -244,11 +243,11 @@ export default function ItemDetail() {
 
             {/* Description of plant */}
             <Typography
-              fontFamily={"Playfair Display"}
+              fontFamily={"Plus Jakarta Sans"}
               fontSize="1.25rem"
               sx={{
                 marginTop: "1rem",
-                color: "#918C83",
+                color: "white",
                 textAlign: "left",
               }}
             >
@@ -280,12 +279,12 @@ export default function ItemDetail() {
                   fontWeight: 600,
                   borderRadius: "12px",
                   padding: "8px 24px",
-                  backgroundColor: "#F1E9DA",
+                  backgroundColor: "#f14837",
                   boxShadow: 1,
-                  color: "black",
+                  color: "white",
                   height: "3rem",
                   "&:hover": {
-                    backgroundColor: "#A6B591",
+                    backgroundColor: "#F57D7F",
                   },
                 }}
               >

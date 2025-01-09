@@ -1,10 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import Navbar from "../components/Navbar";
-import greenCircle from "../assets/radial_gradient.png";
 import { Box, IconButton, Typography } from "@mui/material";
 import type { SVGProps } from "react";
-import plant from "../assets/plant_home.png";
-import plant2 from "../assets/plant_home_2.png";
+import plant from "../assets/plant_1.png";
+import plant2 from "../assets/plant_2.png";
+import plant3 from "../assets/plant_3.png";
+import plant4 from "../assets/plant_4.png";
+import plant5 from "../assets/plant_5.png";
+import plant6 from "../assets/plant_6.png";
 import HomeItems from "../components/HomeItems";
 import item1 from "../assets/image 1.png";
 import item2 from "../assets/image 2.png";
@@ -40,10 +43,46 @@ export default function Home() {
           zIndex: 1,
         }}
       >
+        {/* Box for plants on lhs */}
+        <Box sx={{ position: "relative", width: "20%" }}>
+          <img
+            src={plant}
+            className="spin-up-1"
+            style={{
+              position: "absolute",
+              bottom: "80%",
+              left: "30%",
+              width: "180px",
+              zIndex: 1,
+            }}
+          ></img>
+          <img
+            src={plant2}
+            className="spin-up-2"
+            style={{
+              position: "absolute",
+              top: "20%",
+              right: "55%",
+              zIndex: 1,
+            }}
+          ></img>
+          <img
+            src={plant3}
+            className="spin-up-3"
+            style={{
+              position: "absolute",
+              top: "70%",
+              left: "50%",
+              zIndex: 1,
+              width: "170px",
+            }}
+          ></img>
+        </Box>
+
         {/* Box for middle of hero */}
         <Box
           sx={{
-            width: "100%",
+            width: "60%",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -51,18 +90,14 @@ export default function Home() {
         >
           {/* Logo */}
           <TablerPlant2 // Fade up animation
-            className={`fade-up fade-up-background ${
-              fadeIn ? "fade-up-background" : ""
-            }`}
-            style={{ color: "#f14837", marginBottom: "-3rem" }}
+            className="fade-up"
+            style={{ color: "#f14837", marginBottom: "-70px" }}
           />
 
           {/* Website name */}
           <Typography
             // Fade up animation
-            className={`fade-up fade-up-foreground ${
-              fadeIn ? "fade-up-foreground" : ""
-            }`}
+            className="fade-up"
             fontFamily={"Playfair Display"}
             color="white"
             fontWeight={600}
@@ -74,18 +109,53 @@ export default function Home() {
           {/* Website motto */}
           <Typography
             // Fade up animation
-            className={`fade-up fade-up-foreground ${
-              fadeIn ? "fade-up-foreground" : ""
-            }`}
+            className="fade-up"
             fontFamily={"Playfair Display"}
             fontWeight={500}
             fontSize={"2rem"}
             textAlign={"center"}
             color="white"
+            mt="-30px"
           >
             bringing <span style={{ color: "white" }}>nature</span> to <br />
             your <span style={{ color: "white" }}>doorstep.</span>
           </Typography>
+        </Box>
+
+        {/* Box for plants on rhs */}
+        <Box sx={{ position: "relative", width: "20%" }}>
+          <img
+            src={plant4}
+            className="spin-up-4"
+            style={{
+              position: "absolute",
+              bottom: "110%",
+              left: "-20%",
+              zIndex: 1,
+              width: "140px",
+            }}
+          ></img>
+          <img
+            src={plant5}
+            className="spin-up-5"
+            style={{
+              position: "absolute",
+              top: "0%",
+              left: "35%",
+              zIndex: 1,
+            }}
+          ></img>
+          <img
+            src={plant6}
+            className="spin-up-6"
+            style={{
+              position: "absolute",
+              top: "80%",
+              left: "10%",
+              zIndex: 1,
+              width: "150px",
+            }}
+          ></img>
         </Box>
       </Box>
 

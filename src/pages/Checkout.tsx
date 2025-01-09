@@ -56,12 +56,12 @@ export default function Checkout() {
                 fontWeight: 600,
                 borderRadius: "4px",
                 padding: "8px 24px",
-                backgroundColor: "#F2F2F2",
-                color: "black",
+                backgroundColor: "#f14837",
+                color: "white",
                 height: 50,
                 boxShadow: 1,
                 "&:hover": {
-                  backgroundColor: "#A6B591",
+                  backgroundColor: "#F57D7F",
                 },
               }}
             >
@@ -131,7 +131,6 @@ export default function Checkout() {
                   alt="Item"
                   style={{
                     borderRadius: "12px",
-                    boxShadow: "2px 0px 2px rgba(241, 233, 218, 1)",
                   }}
                 ></img>
               </Box>
@@ -148,7 +147,7 @@ export default function Checkout() {
                   fontFamily={"Plus Jakarta Sans"}
                   fontSize="1.25rem"
                   fontWeight={600}
-                  color="#3B7D56"
+                  color="white"
                 >
                   {item.name}
                 </Typography>
@@ -248,11 +247,11 @@ export default function Checkout() {
             fontWeight: 600,
             borderRadius: "12px",
             padding: "8px 24px",
-            backgroundColor: "#F1E9DA",
+            backgroundColor: "#f14837",
+            color: "white",
             boxShadow: 1,
-            color: "black",
             "&:hover": {
-              backgroundColor: "#A6B591",
+              backgroundColor: "#F57D7F",
             },
           }}
         >
