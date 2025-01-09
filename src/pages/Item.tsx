@@ -134,12 +134,12 @@ export default function ItemDetail() {
               fontWeight: 600,
               borderRadius: "4px",
               padding: "8px 24px",
-              backgroundColor: "#F2F2F2",
-              color: "black",
+              backgroundColor: "#f14837",
+              color: "white",
               height: 50,
               boxShadow: 1,
               "&:hover": {
-                backgroundColor: "#A6B591",
+                backgroundColor: "#F57D7F",
               },
             }}
           >

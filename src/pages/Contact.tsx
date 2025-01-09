@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import bg from "../assets/contact_bg.png";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import Navbar from "../components/Navbar";
 
@@ -33,22 +32,6 @@ export default function Contact() {
   return (
     <>
       <Navbar />
-
-      {/* Box for background image */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100vw",
-          height: "100vh",
-          backgroundImage: `url(${bg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          zIndex: -1,
-        }}
-      ></Box>
 
       {/* Box for whole thing */}
       <Box

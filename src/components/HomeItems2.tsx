@@ -171,7 +171,6 @@ export default function HomeItems2({
               alt="Item"
               style={{
                 borderRadius: "45px",
-                boxShadow: "-36px 0px 32px rgba(241, 233, 218, 1)",
               }}
             ></img>
           </Box>

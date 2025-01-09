@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import Navbar from "../components/Navbar";
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import type { SVGProps } from "react";
 import plant from "../assets/plant_1.png";
 import plant2 from "../assets/plant_2.png";
@@ -13,15 +13,10 @@ import item1 from "../assets/image 1.png";
 import item2 from "../assets/image 2.png";
 import HomeItems2 from "../components/HomeItems2";
 import "./Home.css";
+import StepsScroll from "../components/StepsScroll";
 
 export default function Home() {
   const homeItemsRef = useRef<HTMLDivElement>(null);
-
-  const handleScrollToHomeItems = () => {
-    if (homeItemsRef.current) {
-      homeItemsRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <>
@@ -36,6 +31,7 @@ export default function Home() {
           padding: "5rem",
           position: "relative",
           zIndex: 1,
+          mb: 10,
         }}
       >
         {/* Box for plants on lhs */}
@@ -105,15 +101,24 @@ export default function Home() {
           <Typography
             // Fade up animation
             className="fade-up"
-            fontFamily={"Playfair Display"}
+            fontFamily={"Plus Jakarta Sans"}
             fontWeight={500}
             fontSize={"2rem"}
             textAlign={"center"}
             color="white"
             mt="-30px"
           >
-            bringing <span style={{ color: "white" }}>nature</span> to <br />
-            your <span style={{ color: "white" }}>doorstep.</span>
+            Bringing <span style={{ color: "#f14837" }}>nature</span> to <br />
+            your <span style={{ color: "#f14837" }}>doorstep.</span>
+          </Typography>
+
+          <Typography
+            color="white"
+            variant="body2"
+            mt={18}
+            fontFamily="Plus Jakarta Sans"
+          >
+            Scroll Down to Learn More
           </Typography>
         </Box>
 
@@ -145,7 +150,7 @@ export default function Home() {
             className="spin-up-6"
             style={{
               position: "absolute",
-              top: "80%",
+              top: "60%",
               left: "10%",
               zIndex: 1,
               width: "150px",
@@ -154,36 +159,9 @@ export default function Home() {
         </Box>
       </Box>
 
-      {/* Box for scroll to featured items text + arrow */}
-      <Box
-        sx={{
-          position: "absolute",
-          bottom: 0,
-          left: "50%",
-          transform: "translateX(-50%)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <Typography
-          fontFamily={"Plus Jakarta Sans"}
-          fontWeight={500}
-          fontSize={"1rem"}
-          textAlign={"center"}
-          color="white"
-        >
-          Featured Items
-        </Typography>
-
-        <IconButton
-          sx={{
-            color: "white",
-          }}
-          onClick={handleScrollToHomeItems}
-        >
-          <IonArrowDownOutline />
-        </IconButton>
+      {/* Box for steps graphic scroll component */}
+      <Box display="flex" width="100%" justifyContent="center">
+        <StepsScroll />
       </Box>
 
       {/* Box for item components */}
@@ -191,6 +169,16 @@ export default function Home() {
         sx={{ paddingTop: "4rem", paddingBottom: "8rem" }}
         ref={homeItemsRef}
       >
+        <Typography
+          fontFamily="Plus Jakarta Sans"
+          variant="h5"
+          display="flex"
+          justifyContent="center"
+          color="white"
+          mt={10}
+        >
+          🪴 Some of our featured plants 🪴
+        </Typography>
         <HomeItems
           itemPic={item1}
           itemName="Monstera Deliciosa (Faux)"
