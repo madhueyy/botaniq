@@ -15,12 +15,7 @@ import HomeItems2 from "../components/HomeItems2";
 import "./Home.css";
 
 export default function Home() {
-  const [fadeIn, setFadeIn] = useState(false);
   const homeItemsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setFadeIn(true);
-  }, []);
 
   const handleScrollToHomeItems = () => {
     if (homeItemsRef.current) {
