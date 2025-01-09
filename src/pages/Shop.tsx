@@ -11,6 +11,7 @@ import {
   Select,
   SelectChangeEvent,
   Typography,
+  CircularProgress,
 } from "@mui/material";
 import { Item } from "../../backend/src/data/data";
 import SearchIcon from "@mui/icons-material/Search";
@@ -22,6 +23,7 @@ export default function Shop() {
   const [items, setItems] = useState<Item[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [sortOption, setSortOption] = useState<string>("popularity");
+  const [loading, setLoading] = useState(true);
 
   // Hook for navigation
   const navigate = useNavigate();
@@ -47,7 +49,10 @@ export default function Shop() {
 
   // Run on first render
   useEffect(() => {
-    fetchItems();
+    setTimeout(() => {
+      fetchItems();
+      setLoading(false);
+    }, 2000);
   }, []);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -204,50 +209,73 @@ export default function Shop() {
         </Box>
       </Box>
 
-      {/* Box for all items */}
-      <Box
-        marginTop={4}
-        paddingLeft={16}
-        paddingRight={16}
-        rowGap={8}
-        columnGap={4}
-        display={"grid"}
-        gridTemplateColumns={"repeat(5, 1fr)"}
-        justifyItems={"center"}
-      >
-        {/* Shows all items for "" in search query,
-        if after filtering with the query there are > 0 items
-        found then show items, else show no items found */}
-        {filteredItems.length > 0 ? (
-          filteredItems.map((item) => (
-            <ShopItem
-              key={item.itemId}
-              itemId={item.itemId}
-              itemPic={item.picUrl}
-              itemName={item.name}
-              itemPrice={item.price}
-              itemReviewStars={item.reviewStars}
-              itemReviews={item.reviews}
-              itemDesc={item.itemDesc}
-            />
-          ))
-        ) : (
+      <Box>
+        {loading ? (
           <Box
             sx={{
-              marginTop: "2rem",
+              margin: "10rem",
               display: "flex",
               flexDirection: "column",
+              justifyContent: "center",
               alignItems: "center",
             }}
           >
+            <CircularProgress color="error" />
             <Typography
-              variant="h5"
-              fontFamily={"Plus Jakarta Sans"}
-              fontWeight={700}
-              color="black"
+              variant="h6"
+              color="white"
+              fontFamily="Plus Jakarta Sans"
             >
-              No matching items found
+              Loading items...
             </Typography>
+          </Box>
+        ) : (
+          // Box for all items
+          <Box
+            marginTop={4}
+            paddingLeft={16}
+            paddingRight={16}
+            rowGap={8}
+            columnGap={4}
+            display={"grid"}
+            gridTemplateColumns={"repeat(5, 1fr)"}
+            justifyItems={"center"}
+          >
+            {/* Shows all items for "" in search query,
+            if after filtering with the query there are > 0 items
+            found then show items, else show no items found */}
+            {filteredItems.length > 0 ? (
+              filteredItems.map((item) => (
+                <ShopItem
+                  key={item.itemId}
+                  itemId={item.itemId}
+                  itemPic={item.picUrl}
+                  itemName={item.name}
+                  itemPrice={item.price}
+                  itemReviewStars={item.reviewStars}
+                  itemReviews={item.reviews}
+                  itemDesc={item.itemDesc}
+                />
+              ))
+            ) : (
+              <Box
+                sx={{
+                  marginTop: "2rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <Typography
+                  variant="h5"
+                  fontFamily={"Plus Jakarta Sans"}
+                  fontWeight={700}
+                  color="black"
+                >
+                  No matching items found
+                </Typography>
+              </Box>
+            )}
           </Box>
         )}
       </Box>
