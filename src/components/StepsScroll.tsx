@@ -6,9 +6,11 @@ import PaymentIcon from "@mui/icons-material/Payment";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import icon from "../../public/plant-icon.svg";
 import "./StepsScroll.css";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function StepsScroll() {
   const [activeStep, setActiveStep] = useState(0);
+  const isMobile = useMediaQuery("(max-width:600px)");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,7 +90,11 @@ export default function StepsScroll() {
 
   return (
     <>
-      <Stack gap={30} paddingInline={20} className="steps-container">
+      <Stack
+        gap={30}
+        paddingInline={isMobile ? 0 : 20}
+        className="steps-container"
+      >
         {steps.map((step, index) => (
           <Box key={index} className="step-item">
             <Typography
@@ -97,7 +103,7 @@ export default function StepsScroll() {
               }`}
               fontFamily="Playfair Display"
               mr={6}
-              variant="h3"
+              variant={isMobile ? "h5" : "h3"}
               textAlign="right"
               flex={1}
               color="black"
@@ -116,7 +122,7 @@ export default function StepsScroll() {
               ml={6}
               flex={1}
               color="white"
-              fontSize="1.2rem"
+              fontSize={isMobile ? "0.7rem" : "1.2rem"}
             >
               {step.description}
             </Typography>

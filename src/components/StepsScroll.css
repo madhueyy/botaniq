@@ -50,3 +50,10 @@
     margin-top: 50px;
   }
 }
+
+@media (max-width: 600px) {
+  .vertical-line {
+    height: 1280px;
+    margin-top: 40px;
+  }
+}

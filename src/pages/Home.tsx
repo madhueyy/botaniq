@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import Navbar from "../components/Navbar";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 import type { SVGProps } from "react";
 import plant from "../assets/plant_1.png";
 import plant2 from "../assets/plant_2.png";
@@ -14,9 +14,17 @@ import item2 from "../assets/image 2.png";
 import HomeItems2 from "../components/HomeItems2";
 import "./Home.css";
 import StepsScroll from "../components/StepsScroll";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const homeItemsRef = useRef<HTMLDivElement>(null);
+  const isMobile = useMediaQuery("(max-width:600px)");
+  const navigate = useNavigate();
+  const handleShopClick = () => {
+    navigate("/shop");
+  };
 
   return (
     <>
@@ -35,7 +43,13 @@ export default function Home() {
         }}
       >
         {/* Box for plants on lhs */}
-        <Box sx={{ position: "relative", width: "20%" }}>
+        <Box
+          sx={{
+            position: "relative",
+            width: "20%",
+            display: isMobile ? "none" : "block",
+          }}
+        >
           <img
             src={plant}
             className="spin-up-1"
@@ -73,7 +87,7 @@ export default function Home() {
         {/* Box for middle of hero */}
         <Box
           sx={{
-            width: "60%",
+            width: isMobile ? "100%" : "60%",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -82,7 +96,7 @@ export default function Home() {
           {/* Logo */}
           <TablerPlant2 // Fade up animation
             className="fade-up"
-            style={{ color: "#f14837", marginBottom: "-70px" }}
+            style={{ color: "#f14837", marginBottom: "-50px" }}
           />
 
           {/* Website name */}
@@ -92,7 +106,7 @@ export default function Home() {
             fontFamily={"Playfair Display"}
             color="white"
             fontWeight={600}
-            fontSize={"8rem"}
+            fontSize={isMobile ? "4rem" : "8rem"}
           >
             BOTANIQ
           </Typography>
@@ -103,10 +117,9 @@ export default function Home() {
             className="fade-up"
             fontFamily={"Plus Jakarta Sans"}
             fontWeight={500}
-            fontSize={"2rem"}
+            fontSize={isMobile ? "1.1rem" : "2rem"}
             textAlign={"center"}
             color="white"
-            mt="-30px"
           >
             Bringing <span style={{ color: "#f14837" }}>nature</span> to <br />
             your <span style={{ color: "#f14837" }}>doorstep.</span>
@@ -114,8 +127,8 @@ export default function Home() {
 
           <Typography
             color="white"
-            variant="body2"
-            mt={18}
+            fontSize={isMobile ? "0.7rem" : "0.9rem"}
+            mt={isMobile ? 22 : 12}
             fontFamily="Plus Jakarta Sans"
           >
             Scroll Down to Learn More
@@ -123,7 +136,13 @@ export default function Home() {
         </Box>
 
         {/* Box for plants on rhs */}
-        <Box sx={{ position: "relative", width: "20%" }}>
+        <Box
+          sx={{
+            position: "relative",
+            width: "20%",
+            display: isMobile ? "none" : "block",
+          }}
+        >
           <img
             src={plant4}
             className="spin-up-4"
@@ -166,12 +185,16 @@ export default function Home() {
 
       {/* Box for item components */}
       <Box
-        sx={{ paddingTop: "4rem", paddingBottom: "8rem" }}
+        sx={{
+          paddingTop: "4rem",
+          paddingBottom: "8rem",
+          display: isMobile ? "none" : "block",
+        }}
         ref={homeItemsRef}
       >
         <Typography
           fontFamily="Plus Jakarta Sans"
-          variant="h5"
+          variant={isMobile ? "h6" : "h5"}
           display="flex"
           justifyContent="center"
           color="white"
@@ -195,6 +218,37 @@ export default function Home() {
           itemReviews={52}
           itemDesc="Often called the 'Swiss Cheese Plant,' this is a striking tropical plant known for its large, glossy, fenestrated leaves. This popular houseplant adds an exotic touch to any space with its bold, statement-making foliage. Easy to care for, Monstera thrives in indirect light and brings a lush, jungle vibe to your home."
         />
+      </Box>
+
+      {/* Box for go to shop button */}
+      <Box
+        sx={{
+          paddingTop: "8rem",
+          paddingBottom: "8rem",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Button
+          onClick={handleShopClick}
+          endIcon={<ArrowForwardIcon />}
+          sx={{
+            fontFamily: "Plus Jakarta Sans",
+            fontSize: "16px",
+            fontWeight: 600,
+            borderRadius: "4px",
+            padding: "8px 24px",
+            backgroundColor: "#f14837",
+            color: "white",
+            height: 50,
+            boxShadow: 1,
+            "&:hover": {
+              backgroundColor: "#F57D7F",
+            },
+          }}
+        >
+          Go to shop
+        </Button>
       </Box>
     </>
   );
