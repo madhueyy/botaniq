@@ -4,6 +4,7 @@ import type { SVGProps } from "react";
 import { Item } from "../../backend/src/data/data";
 import { useCart } from "./CartContext";
 import SnackBar from "./SnackBar";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export type HomeItemsProps = {
   itemPic: string;
@@ -43,6 +44,7 @@ export default function HomeItems({
   // Num of filled and not filled stars for review box
   const filledStars = itemReviewStars;
   const nonFilledStars = 5 - itemReviewStars;
+  const isTablet = useMediaQuery("(max-width:1024px)");
 
   return (
     <>
@@ -54,8 +56,7 @@ export default function HomeItems({
           alignItems: "center",
           justifyContent: "flex-end",
           paddingTop: "4rem",
-          paddingRight: "10rem",
-          paddingLeft: "10rem",
+          paddingInline: isTablet ? "4rem" : "10rem",
         }}
       >
         {/* Box for outline/box shadow of item */}
@@ -87,14 +88,14 @@ export default function HomeItems({
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-end",
-              marginRight: "4rem",
+              marginRight: isTablet ? "2rem" : "4rem",
             }}
           >
             {/* Item name */}
             <Typography
               fontFamily={"Playfair Display"}
               fontWeight={600}
-              variant="h3"
+              variant={isTablet ? "h4" : "h3"}
               sx={{ color: "#f14837" }}
             >
               {itemName.toUpperCase()}

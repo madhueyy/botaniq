@@ -130,7 +130,7 @@ export default function Home() {
             style={{
               position: "absolute",
               bottom: "110%",
-              left: "-20%",
+              left: "20%",
               zIndex: 1,
               width: "140px",
             }}

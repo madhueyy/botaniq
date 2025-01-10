@@ -8,6 +8,7 @@ import {
   MaterialSymbolsStar,
   MaterialSymbolsStarOutline,
 } from "./HomeItems";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function HomeItems2({
   itemPic,
@@ -38,6 +39,7 @@ export default function HomeItems2({
   // Num of filled and not filled stars for review box
   const filledStars = itemReviewStars;
   const nonFilledStars = 5 - itemReviewStars;
+  const isTablet = useMediaQuery("(max-width:1024px)");
 
   return (
     <>
@@ -49,8 +51,7 @@ export default function HomeItems2({
           alignItems: "center",
           justifyContent: "flex-start",
           paddingTop: "4rem",
-          paddingRight: "10rem",
-          paddingLeft: "10rem",
+          paddingInline: isTablet ? "4rem" : "10rem",
         }}
       >
         {/* Box for outline/box shadow of item */}
@@ -71,14 +72,14 @@ export default function HomeItems2({
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
-              marginLeft: "4rem",
+              marginLeft: isTablet ? "2rem" : "4rem",
             }}
           >
             {/* Item name */}
             <Typography
               fontFamily={"Playfair Display"}
               fontWeight={600}
-              variant="h3"
+              variant={isTablet ? "h4" : "h3"}
               sx={{ color: "#f14837" }}
             >
               {itemName.toUpperCase()}

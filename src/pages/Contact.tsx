@@ -47,7 +47,7 @@ export default function Contact() {
           flexDirection={"column"}
           gap={4}
           sx={{
-            width: "32vw",
+            width: "30rem",
             backgroundColor: "#f9f9f9",
             padding: "2rem",
             borderRadius: "12px",

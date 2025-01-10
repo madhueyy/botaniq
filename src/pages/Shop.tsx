@@ -99,7 +99,7 @@ export default function Shop() {
         flexDirection={"row"}
         justifyContent={"space-between"}
         alignItems={"center"}
-        sx={{ marginTop: "2rem", paddingRight: 12 }}
+        sx={{ marginTop: "2rem", paddingRight: 6 }}
       >
         {/* Box for back button */}
         <Box flex={1} display="flex" justifyContent={"center"}>
@@ -233,13 +233,20 @@ export default function Shop() {
           // Box for all items
           <Box
             marginTop={4}
-            paddingLeft={16}
-            paddingRight={16}
+            paddingLeft={10}
+            paddingRight={10}
             rowGap={8}
             columnGap={4}
             display={"grid"}
-            gridTemplateColumns={"repeat(5, 1fr)"}
             justifyItems={"center"}
+            sx={{
+              gridTemplateColumns: {
+                xs: "repeat(2, 1fr)",
+                sm: "repeat(3, 1fr)",
+                md: "repeat(4, 1fr)",
+                lg: "repeat(5, 1fr)",
+              },
+            }}
           >
             {/* Shows all items for "" in search query,
             if after filtering with the query there are > 0 items

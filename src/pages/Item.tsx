@@ -13,6 +13,7 @@ import { useCart } from "../components/CartContext";
 import RelatedItems from "../components/RelatedItems";
 import SnackBar from "../components/SnackBar";
 import "./Item.css";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function ItemDetail() {
   const { itemId } = useParams();
@@ -21,6 +22,7 @@ export default function ItemDetail() {
   const { addItem } = useCart();
 
   const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const isTablet = useMediaQuery("(max-width:1024px)");
 
   const handleClose = () => {
     setSnackbarOpen(false);
@@ -158,7 +160,7 @@ export default function ItemDetail() {
           gap={12}
           justifyContent={"center"}
           alignItems={"center"}
-          sx={{ marginRight: "8rem", marginLeft: "8rem" }}
+          sx={{ marginInline: isTablet ? "4rem" : "8rem" }}
         >
           {/* Box for image */}
           <Box sx={{ width: "100rem" }}>
@@ -195,7 +197,7 @@ export default function ItemDetail() {
             <Typography
               fontFamily={"Playfair Display"}
               fontWeight={700}
-              variant="h2"
+              variant={isTablet ? "h3" : "h2"}
               sx={{ color: "white" }}
             >
               {item.name.toUpperCase()}
@@ -244,7 +246,7 @@ export default function ItemDetail() {
             {/* Description of plant */}
             <Typography
               fontFamily={"Plus Jakarta Sans"}
-              fontSize="1.25rem"
+              fontSize={isTablet ? "1rem" : "1.25rem"}
               sx={{
                 marginTop: "1rem",
                 color: "white",

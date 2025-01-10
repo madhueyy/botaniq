@@ -43,3 +43,10 @@
 .icon {
   color: #f14837;
 }
+
+@media (max-width: 1024px) {
+  .vertical-line {
+    height: 1460px;
+    margin-top: 50px;
+  }
+}
