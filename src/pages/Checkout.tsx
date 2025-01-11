@@ -15,9 +15,11 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useNavigate } from "react-router-dom";
 import "./Checkout.css";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function Checkout() {
   const { items, removeItem, updateItemQuantity } = useCart();
+  const isMobile = useMediaQuery("(max-width:768px)");
 
   // Function to calculate total price
   const calculateTotal = () => {
@@ -45,27 +47,27 @@ export default function Checkout() {
         <Navbar />
 
         {/* Box for go back button */}
-        <Box sx={{ marginY: "2rem", paddingLeft: 12 }}>
+        <Box sx={{ marginY: "2rem", paddingLeft: isMobile ? 4 : 12 }}>
           {/* Box for back button */}
           <Box flex={1} display="flex">
             <Button
               onClick={handleBackClick}
+              startIcon={<ArrowBackIcon />}
               sx={{
                 fontFamily: "Plus Jakarta Sans",
-                fontSize: "16px",
+                fontSize: isMobile ? "12px" : "16px",
                 fontWeight: 600,
                 borderRadius: "4px",
-                padding: "8px 24px",
+                padding: isMobile ? "8px 16px" : "8px 24px",
                 backgroundColor: "#f14837",
                 color: "white",
-                height: 50,
+                height: isMobile ? 40 : 50,
                 boxShadow: 1,
                 "&:hover": {
                   backgroundColor: "#F57D7F",
                 },
               }}
             >
-              <ArrowBackIcon sx={{ marginRight: 2 }} />
               Go to shop
             </Button>
           </Box>
@@ -81,7 +83,7 @@ export default function Checkout() {
           }}
         >
           <Typography
-            variant="h4"
+            variant={isMobile ? "h5" : "h4"}
             fontFamily={"Plus Jakarta Sans"}
             fontWeight={700}
             color="black"
@@ -99,7 +101,7 @@ export default function Checkout() {
       <Navbar />
 
       {/* Box for whole thing */}
-      <Box sx={{ marginTop: "1rem", paddingX: 12 }}>
+      <Box sx={{ marginTop: "1rem", paddingX: isMobile ? 4 : 12 }}>
         <Typography
           variant="h4"
           fontFamily={"Plus Jakarta Sans"}
@@ -217,7 +219,7 @@ export default function Checkout() {
         {/* Box for price breakdown */}
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Typography
-            variant="h5"
+            variant={isMobile ? "h6" : "h5"}
             fontFamily={"Plus Jakarta Sans"}
             fontWeight={600}
             color="black"
@@ -228,7 +230,7 @@ export default function Checkout() {
           </Typography>
 
           <Typography
-            variant="h5"
+            variant={isMobile ? "h6" : "h5"}
             fontFamily={"Plus Jakarta Sans"}
             fontWeight={600}
             color="black"
@@ -241,12 +243,12 @@ export default function Checkout() {
         {/* Checkout button */}
         <Button
           sx={{
-            marginY: "1rem",
+            marginY: "2rem",
             fontFamily: "Plus Jakarta Sans",
-            fontSize: "20px",
+            fontSize: isMobile ? "12px" : "20px",
             fontWeight: 600,
             borderRadius: "12px",
-            padding: "8px 24px",
+            padding: isMobile ? "8px 16px " : "8px 24px",
             backgroundColor: "#f14837",
             color: "white",
             boxShadow: 1,

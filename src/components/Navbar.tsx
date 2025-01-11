@@ -1,8 +1,11 @@
 import { AppBar, Box, Button, IconButton, Toolbar } from "@mui/material";
 import { Link } from "react-router-dom";
 import type { SVGProps } from "react";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function Navbar() {
+  const isMobile = useMediaQuery("(max-width:600px)");
+
   const navItems = [
     { path: "/", label: "HOME" },
     { path: "/shop", label: "SHOP" },
@@ -26,9 +29,9 @@ export default function Navbar() {
     >
       <Toolbar>
         {/* Box for whole bar */}
-        <Box sx={{ display: "flex", flexGrow: 1, gap: "20px" }}>
+        <Box sx={{ display: "flex", flexGrow: 1, gap: isMobile ? 0 : "20px" }}>
           {/* Box for left side of bar */}
-          <Box sx={{ color: "#f14837" }}>
+          <Box sx={{ color: "#f14837", display: isMobile ? "none" : "block" }}>
             <TablerPlant2 />
           </Box>
 
@@ -38,7 +41,7 @@ export default function Navbar() {
               display: "flex",
               justifyContent: "center",
               flexGrow: 2,
-              gap: "20px",
+              gap: isMobile ? 0 : "20px",
               marginTop: "10px",
             }}
           >
@@ -50,7 +53,7 @@ export default function Navbar() {
                 to={item.path}
                 sx={{
                   color: "white",
-                  fontSize: "1.25rem",
+                  fontSize: isMobile ? "12px" : "1.25rem",
                   fontFamily: "Plus Jakarta Sans",
                   fontWeight: 600,
                   borderRadius: isActive(item.path) ? "12px" : "none",
@@ -59,8 +62,8 @@ export default function Navbar() {
                     ? "#f14837"
                     : "transparent",
                   boxShadow: isActive(item.path) ? 1 : 0,
-                  height: isActive(item.path) ? "2.25rem" : "2.25rem",
-                  padding: isActive(item.path) ? "0px 24px" : "0px 24px",
+                  height: isMobile ? "1.75rem" : "2.25rem",
+                  padding: isMobile ? "0px 14px" : "0px 24px",
                   lineHeight: "2.25rem",
                   "&:hover": {
                     backgroundColor: isActive(item.path)
@@ -82,7 +85,7 @@ export default function Navbar() {
           style={{ color: "inherit", textDecoration: "none" }}
         >
           <IconButton
-            size="large"
+            size={isMobile ? "medium" : "large"}
             edge="end"
             sx={{
               color: "#f14837",
@@ -104,7 +107,7 @@ export function TablerPlant2(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="3em"
+      width="2em"
       height="3em"
       viewBox="0 0 24 24"
       {...props}

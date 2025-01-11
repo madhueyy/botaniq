@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Item } from "../../backend/src/data/data";
 import { Box, Typography } from "@mui/material";
 import ShopItem from "./ShopItem";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 interface RelatedItemsProps {
   itemId: number;
@@ -10,6 +11,7 @@ interface RelatedItemsProps {
 
 export default function RelatedItems({ itemId, itemPrice }: RelatedItemsProps) {
   const [filteredItems, setFilteredItems] = useState<Item[]>([]);
+  const isMobile = useMediaQuery("(max-width:768px)");
 
   // Function to fetch and filter all the plants
   // based on name similarity
@@ -53,7 +55,7 @@ export default function RelatedItems({ itemId, itemPrice }: RelatedItemsProps) {
 
   return (
     <>
-      <Box display={"flex"} flexDirection={"row"} gap={8}>
+      <Box display={"flex"} flexDirection={"row"} gap={isMobile ? 2 : 8}>
         {/* If filtered related items and there's > 0 then
         show map items' key to show each ShopItem, else
         show no related items text */}

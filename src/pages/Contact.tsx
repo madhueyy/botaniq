@@ -39,6 +39,7 @@ export default function Contact() {
         justifyContent={"center"}
         alignItems={"center"}
         marginTop={"2rem"}
+        ml={2}
       >
         {/* Box for contact form */}
         <Box
@@ -47,7 +48,7 @@ export default function Contact() {
           flexDirection={"column"}
           gap={4}
           sx={{
-            width: "30rem",
+            width: "400px",
             backgroundColor: "#f9f9f9",
             padding: "2rem",
             borderRadius: "12px",

@@ -18,12 +18,14 @@ import SearchIcon from "@mui/icons-material/Search";
 import SwapVertIcon from "@mui/icons-material/SwapVert";
 import { useNavigate } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function Shop() {
   const [items, setItems] = useState<Item[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [sortOption, setSortOption] = useState<string>("popularity");
   const [loading, setLoading] = useState(true);
+  const isMobile = useMediaQuery("(max-width:768px)");
 
   // Hook for navigation
   const navigate = useNavigate();
@@ -96,31 +98,36 @@ export default function Shop() {
       {/* Box for back button, search bar and sort-by */}
       <Box
         display={"flex"}
-        flexDirection={"row"}
+        flexDirection={isMobile ? "column" : "row"}
         justifyContent={"space-between"}
-        alignItems={"center"}
-        sx={{ marginTop: "2rem", paddingRight: 6 }}
+        alignItems={isMobile ? "flex-end" : "center"}
+        rowGap={1}
+        sx={{ marginTop: "2rem", paddingRight: isMobile ? 0 : 6 }}
       >
         {/* Box for back button */}
-        <Box flex={1} display="flex" justifyContent={"center"}>
+        <Box
+          flex={1}
+          display={isMobile ? "none" : "flex"}
+          justifyContent={"center"}
+        >
           <Button
             onClick={handleBackClick}
+            startIcon={<ArrowBackIcon />}
             sx={{
               fontFamily: "Plus Jakarta Sans",
-              fontSize: "16px",
+              fontSize: isMobile ? "10px" : "16px",
               fontWeight: 600,
               borderRadius: "4px",
-              padding: "8px 24px",
+              padding: isMobile ? "0px 10px" : "8px 24px",
               backgroundColor: "#f14837",
               color: "white",
-              height: 50,
+              height: isMobile ? 40 : 50,
               boxShadow: 1,
               "&:hover": {
                 backgroundColor: "#F57D7F",
               },
             }}
           >
-            <ArrowBackIcon sx={{ marginRight: 2 }} />
             Go back
           </Button>
         </Box>
@@ -129,10 +136,10 @@ export default function Shop() {
         <Box flex={2} display="flex" justifyContent={"center"}>
           <Paper
             sx={{
-              p: "2px 4px",
+              p: isMobile ? "0px 0px" : "2px 4px",
               display: "flex",
               alignItems: "center",
-              width: 400,
+              width: isMobile ? 300 : 400,
               backgroundColor: "white",
             }}
           >
@@ -141,7 +148,7 @@ export default function Shop() {
                 marginLeft: 1,
                 flex: 1,
                 fontFamily: "Plus Jakarta Sans",
-                fontSize: "16px",
+                fontSize: isMobile ? "10px" : "16px",
                 fontWeight: 500,
               }}
               placeholder="Search for a plant"
@@ -149,7 +156,7 @@ export default function Shop() {
               value={searchQuery}
               onChange={handleSearchChange}
             />
-            <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
+            <IconButton type="button" aria-label="search">
               <SearchIcon />
             </IconButton>
           </Paper>
@@ -161,8 +168,8 @@ export default function Shop() {
             sx={{
               display: "flex",
               alignItems: "center",
-              width: 300,
-              height: 50,
+              width: isMobile ? 200 : 300,
+              height: isMobile ? 40 : 50,
               backgroundColor: "white",
             }}
           >
@@ -173,7 +180,7 @@ export default function Shop() {
                 sx={{
                   marginLeft: 1,
                   fontFamily: "Plus Jakarta Sans",
-                  fontSize: "16px",
+                  fontSize: isMobile ? "10px" : "16px",
                   fontWeight: 700,
                 }}
               >
@@ -186,7 +193,7 @@ export default function Shop() {
               inputProps={{ "aria-label": "Sort By" }}
               sx={{
                 fontFamily: "Plus Jakarta Sans",
-                fontSize: "16px",
+                fontSize: isMobile ? "10px" : "16px",
                 fontWeight: 500,
                 flex: 1,
                 // Removing the border to match search bar style
@@ -233,8 +240,9 @@ export default function Shop() {
           // Box for all items
           <Box
             marginTop={4}
-            paddingLeft={10}
-            paddingRight={10}
+            paddingLeft={isMobile ? 2 : 10}
+            paddingRight={isMobile ? 0 : 10}
+            mb={10}
             rowGap={8}
             columnGap={4}
             display={"grid"}

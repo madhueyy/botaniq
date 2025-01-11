@@ -3,19 +3,28 @@ import Navbar from "../components/Navbar";
 import sideImage from "../assets/about_1.png";
 import teamImage from "../assets/about_2.png";
 import "./About.css";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function AboutPage() {
+  const isMobile = useMediaQuery("(max-width:768px)");
+
   return (
     <div className="bg">
       <Navbar />
 
       {/* Box for whole page */}
-      <Box sx={{ marginLeft: "8rem", marginRight: "4rem", marginY: "2rem" }}>
+      <Box
+        sx={{
+          marginLeft: isMobile ? "2rem" : "8rem",
+          marginRight: "4rem",
+          marginY: "2rem",
+        }}
+      >
         {/* Title */}
         <Typography
           fontFamily={"Playfair Display"}
           fontWeight={700}
-          variant="h2"
+          variant={isMobile ? "h3" : "h2"}
           sx={{ color: "#f14837", marginBottom: "2rem" }}
         >
           About Us
@@ -27,7 +36,7 @@ export default function AboutPage() {
             <Typography
               fontFamily={"Plus Jakarta Sans"}
               fontWeight={600}
-              variant="h4"
+              variant={isMobile ? "h5" : "h4"}
               color="white"
               sx={{ marginBottom: "1rem" }}
             >
@@ -36,7 +45,7 @@ export default function AboutPage() {
             <Typography
               fontFamily={"Plus Jakarta Sans"}
               fontWeight={500}
-              fontSize={"1rem"}
+              fontSize={isMobile ? "0.7rem" : "1rem"}
               color="black"
               sx={{ marginBottom: "1rem" }}
             >
@@ -49,7 +58,7 @@ export default function AboutPage() {
             <Typography
               fontFamily={"Plus Jakarta Sans"}
               fontWeight={600}
-              variant="h4"
+              variant={isMobile ? "h5" : "h4"}
               color="white"
               sx={{ marginBottom: "1rem" }}
             >
@@ -58,7 +67,7 @@ export default function AboutPage() {
             <Typography
               fontFamily={"Plus Jakarta Sans"}
               fontWeight={500}
-              fontSize={"1rem"}
+              fontSize={isMobile ? "0.7rem" : "1rem"}
               color="black"
               sx={{ marginBottom: "1rem" }}
             >
@@ -72,7 +81,7 @@ export default function AboutPage() {
             <Typography
               fontFamily={"Plus Jakarta Sans"}
               fontWeight={600}
-              variant="h4"
+              variant={isMobile ? "h5" : "h4"}
               color="white"
               sx={{ marginBottom: "1rem" }}
             >
@@ -81,9 +90,9 @@ export default function AboutPage() {
             <Typography
               fontFamily={"Plus Jakarta Sans"}
               fontWeight={500}
-              fontSize={"1rem"}
+              fontSize={isMobile ? "0.7rem" : "1rem"}
               color="black"
-              sx={{ marginBottom: "1rem" }}
+              sx={{ marginBottom: "2rem" }}
             >
               Our dedicated team is passionate about plants and committed to
               providing you with the best shopping experience. From our expert
@@ -92,7 +101,7 @@ export default function AboutPage() {
             </Typography>
 
             {/* Box for team image */}
-            <Box sx={{ width: "35rem" }}>
+            <Box sx={{ width: isMobile ? "20rem" : "35rem" }}>
               <img
                 style={{
                   borderRadius: "20px",
@@ -104,7 +113,7 @@ export default function AboutPage() {
           </Box>
 
           {/* Box for side image */}
-          <Box sx={{ width: "35rem" }}>
+          <Box display={isMobile ? "none" : "block"} sx={{ width: "35rem" }}>
             <img
               style={{
                 borderRadius: "20px",

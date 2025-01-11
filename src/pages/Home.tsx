@@ -20,7 +20,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const homeItemsRef = useRef<HTMLDivElement>(null);
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery("(max-width:768px)");
   const navigate = useNavigate();
   const handleShopClick = () => {
     navigate("/shop");

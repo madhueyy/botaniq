@@ -10,7 +10,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function StepsScroll() {
   const [activeStep, setActiveStep] = useState(0);
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery("(max-width:768px)");
 
   useEffect(() => {
     const handleScroll = () => {

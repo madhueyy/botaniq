@@ -23,6 +23,7 @@ export default function ItemDetail() {
 
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const isTablet = useMediaQuery("(max-width:1024px)");
+  const isMobile = useMediaQuery("(max-width:768px)");
 
   const handleClose = () => {
     setSnackbarOpen(false);
@@ -67,20 +68,20 @@ export default function ItemDetail() {
         <Navbar />
 
         {/* Box for go back button */}
-        <Box sx={{ marginY: "2rem", paddingLeft: 12 }}>
+        <Box sx={{ marginY: "2rem", paddingLeft: isMobile ? 4 : 12 }}>
           {/* Box for back button */}
           <Box flex={1} display="flex">
             <Button
               onClick={handleBackClick}
               sx={{
                 fontFamily: "Plus Jakarta Sans",
-                fontSize: "16px",
+                fontSize: isMobile ? "10px" : "16px",
                 fontWeight: 600,
                 borderRadius: "4px",
                 padding: "8px 24px",
                 backgroundColor: "#f14837",
                 color: "white",
-                height: 50,
+                height: isMobile ? 40 : 50,
                 boxShadow: 1,
                 "&:hover": {
                   backgroundColor: "#F57D7F",
@@ -125,27 +126,27 @@ export default function ItemDetail() {
       <Navbar />
 
       {/* Box for go back button */}
-      <Box sx={{ marginY: "2rem", paddingLeft: 12 }}>
+      <Box sx={{ marginY: "2rem", paddingLeft: isMobile ? 2 : 12 }}>
         {/* Box for back button */}
         <Box flex={1} display="flex">
           <Button
             onClick={handleBackClick}
+            startIcon={<ArrowBackIcon />}
             sx={{
               fontFamily: "Plus Jakarta Sans",
-              fontSize: "16px",
+              fontSize: isMobile ? "10px" : "16px",
               fontWeight: 600,
               borderRadius: "4px",
               padding: "8px 24px",
               backgroundColor: "#f14837",
               color: "white",
-              height: 50,
+              height: isMobile ? 40 : 50,
               boxShadow: 1,
               "&:hover": {
                 backgroundColor: "#F57D7F",
               },
             }}
           >
-            <ArrowBackIcon sx={{ marginRight: 2 }} />
             Go back
           </Button>
         </Box>
@@ -156,19 +157,19 @@ export default function ItemDetail() {
         {/* Box for item */}
         <Box
           display={"flex"}
-          flexDirection={"row"}
-          gap={12}
+          flexDirection={isMobile ? "column" : "row"}
+          gap={isMobile ? 2 : 12}
           justifyContent={"center"}
           alignItems={"center"}
-          sx={{ marginInline: isTablet ? "4rem" : "8rem" }}
+          sx={{ marginInline: isTablet ? "2rem" : "8rem" }}
         >
           {/* Box for image */}
-          <Box sx={{ width: "100rem" }}>
+          <Box sx={{ width: isMobile ? "15rem" : "100rem" }}>
             <img
               src={item.picUrl}
               alt="Item"
               style={{
-                borderRadius: "45px",
+                borderRadius: isMobile ? "20px" : "45px",
                 transition: "transform 0.1s ease-in-out",
               }}
               onMouseEnter={(e) => {
@@ -277,7 +278,7 @@ export default function ItemDetail() {
                 sx={{
                   marginTop: "40px",
                   fontFamily: "Plus Jakarta Sans",
-                  fontSize: "20px",
+                  fontSize: isMobile ? "14px" : "20px",
                   fontWeight: 600,
                   borderRadius: "12px",
                   padding: "8px 24px",
@@ -300,17 +301,21 @@ export default function ItemDetail() {
         </Box>
       </Box>
       {/* Box for related items */}
-      <Box marginTop="2rem" marginLeft="4rem">
+      <Box marginTop="2rem" marginLeft={isMobile ? "1rem" : "4rem"}>
         <Typography
           fontFamily={"Plus Jakarta Sans"}
           fontWeight={500}
-          variant="h5"
+          variant={isMobile ? "h6" : "h5"}
           sx={{ color: "black" }}
         >
           Related Items
         </Typography>
 
-        <Box marginX={"2rem"} marginTop={"2rem"} marginBottom={"4rem"}>
+        <Box
+          marginX={isMobile ? "0.5rem" : "2rem"}
+          marginTop={"2rem"}
+          marginBottom={"4rem"}
+        >
           <RelatedItems itemId={item.itemId} itemPrice={item.price} />
         </Box>
       </Box>
